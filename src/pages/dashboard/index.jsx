@@ -1,4 +1,5 @@
 import { Profile } from "@/components/Home/Profile";
+import { Topcontainer } from "@/components/Home/TopContainer";
 import { Layout } from "@/components/Layout/Layout";
 import React from "react";
 
@@ -7,6 +8,7 @@ const Index = () => {
     <>
       <Layout>
         <Profile />
+        <Topcontainer />
       </Layout>
     </>
   );

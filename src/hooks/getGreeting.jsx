@@ -5,8 +5,7 @@ const getGreeting = () => {
 
   if (hour < 12) return "Good Morning";
   if (hour < 17) return "Good Afternoon";
-  if (hour < 20) return "Good Evening";
-  return "Good Night";
+  if (hour < 24) return "Good Evening";
 };
 
 const useGreeting = () => {
