@@ -5,7 +5,9 @@ import React from "react";
 const Index = () => {
   return (
     <>
-      <Layout>{/* <Profile /> */}</Layout>
+      <Layout>
+        <Profile />
+      </Layout>
     </>
   );
 };
