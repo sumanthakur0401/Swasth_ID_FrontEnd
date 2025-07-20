@@ -30,7 +30,7 @@ export const Profile = () => {
               <Typography sx={{ fontSize: "16px" }}>{greeting},</Typography>
               <Typography
                 sx={{
-                  fontSize: "32px",
+                  fontSize: "28px",
                   fontWeight: "bolder",
                   mt: -1,
                 }}
@@ -64,9 +64,11 @@ export const Profile = () => {
                   },
                 }}
               >
-                <Home />
+                <Home fontSize="small" />
               </IconButton>
-              <Typography sx={{ pr: 1 }}>{todaysDate}</Typography>
+              <Typography sx={{ pr: 1 }} fontSize="14px">
+                {todaysDate}
+              </Typography>
             </Box>
           </Box>
         </Container>
