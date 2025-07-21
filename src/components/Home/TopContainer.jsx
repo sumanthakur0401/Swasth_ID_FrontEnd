@@ -1,5 +1,13 @@
 import { DOCTORS } from "@/constant";
-import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
+import { ArrowOutwardRounded } from "@mui/icons-material";
+import {
+  Box,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -39,37 +47,44 @@ export const Topcontainer = () => {
                     sx={{
                       borderRadius: theme?.shape?.borderRadius_1,
                       bgcolor: "#FFFFFF",
-                      p: 0.7,
+                      p: 1,
                       display: "flex",
                       alignItems: "center",
-                      gap: 2,
+                      justifyContent: "space-between",
                     }}
                   >
-                    <Box
-                      sx={{
-                        position: "relative",
-                        height: "70px",
-                        width: "70px",
-                        borderRadius: "100px",
-                        bgcolor: `${theme?.palette?.primary?.hover_1}20`,
-                        overflow: "hidden",
-                      }}
-                    >
-                      <Image
-                        src={item?.img}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
-                      />
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                      <Box
+                        sx={{
+                          position: "relative",
+                          height: "70px",
+                          width: "70px",
+                          borderRadius: "100px",
+                          bgcolor: `${theme?.palette?.primary?.hover_1}20`,
+                          overflow: "hidden",
+                        }}
+                      >
+                        <Image
+                          src={item?.img}
+                          layout="fill"
+                          objectFit="cover"
+                          objectPosition="center"
+                        />
+                      </Box>
+                      <Box>
+                        <Typography fontSize="18px" fontWeight="bold">
+                          {item?.name}
+                        </Typography>
+                        <Typography
+                          fontSize={"14px"}
+                          fontWeight={"medium"}
+                        >{`${item?.stream} • ${item?.joining_date}`}</Typography>
+                      </Box>
                     </Box>
                     <Box>
-                      <Typography fontSize="18px" fontWeight="bold">
-                        {item?.name}
-                      </Typography>
-                      <Typography
-                        fontSize={"14px"}
-                        fontWeight={"medium"}
-                      >{`${item?.stream} • ${item?.joining_date}`}</Typography>
+                      <IconButton>
+                        <ArrowOutwardRounded />
+                      </IconButton>
                     </Box>
                   </Box>
                 ))}
