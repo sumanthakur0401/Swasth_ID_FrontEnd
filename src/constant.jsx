@@ -1,8 +1,13 @@
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
+import PeopleIcon from "@mui/icons-material/People";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+
 export const SIDEMENU = [
-  { name: "Dashboard", link: "/dashboard" },
-  { name: "Doctors", link: "/doctors" },
-  { name: "Patients", link: "/patients" },
-  { name: "Appointment", link: "/appointement" },
+  { name: "Dashboard", link: "/dashboard", icon: <DashboardIcon /> },
+  { name: "Doctors", link: "/doctors", icon: <MedicalServicesIcon /> },
+  { name: "Patients", link: "/patients", icon: <PeopleIcon /> },
+  { name: "Appointment", link: "/appointement", icon: <CalendarMonthIcon /> },
 ];
 
 export const DOCTORS = [

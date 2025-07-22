@@ -17,38 +17,47 @@ export const Header = () => {
   console.log(router?.pathname);
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          px: 8
+        }}
+      >
         <Container
           maxWidth="xl"
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            py: 1,
+            py: 2,
           }}
         >
           {/* LOGO */}
-          <Box>
-            <Typography
-              sx={{
-                color: theme?.palette?.primary?.color_1,
-                fontWeight: "bold",
-                fontSize: { xs: "24px", md: "34px" },
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "left",
+              justifyContent: "center",
+              height: "40px", // Match profile button height
+              width: "130px",
+            }}
+          >
+            <Image
+              src="/assets/SwasthId_logo.png"
+              alt="Swasth ID Logo"
+              width={130} // Slightly reduced for tighter fit
+              height={40} // Matches button visual weight
+              priority
+              style={{
+                objectFit: "contain", // Prevent stretching
+                display: "block",
               }}
-            >
-              Swasth ID
-            </Typography>
+            />
           </Box>
           {/* Menus */}
           <Box
             sx={{
-              border: `1px solid ${theme?.palette?.primary?.border_1}`,
               display: { xs: "none", md: "flex" },
-              alignItems: "center",
-              gap: 0.5,
-              p: 0.5,
-              borderRadius: "30px",
-              width: "fit-content",
+              gap: 2,
             }}
           >
             {SIDEMENU?.map((item, key) => (
@@ -56,23 +65,29 @@ export const Header = () => {
                 sx={{
                   bgcolor:
                     router.pathname === item.link
-                      ? `${theme?.palette?.primary?.hover_1}20`
+                      ? theme?.palette?.primary?.hover_1
                       : theme?.palette?.primary?.bgcolor_1,
-                  color: theme?.palette?.primary?.color_1,
-                  border:
+                  color:
                     router.pathname === item.link
-                      ? `1.5px solid ${theme?.palette?.primary?.hover_1}40`
-                      : `1.5px solid ${theme?.palette?.primary?.bgcolor_1}`,
-                  p: 1.5,
+                      ? theme.palette.primary.bgcolor_1
+                      : theme.palette.primary.hover_1,
+                  p: 1,
+                  px: 3,
                   borderRadius: "30px",
+                  display: "flex", // 🔥 Added for alignment
+                  alignItems: "center", // 🔥 Vertically center icon & text
+                  gap: 1, // 🔥 Space between icon and text
                   "&:hover": {
-                    bgcolor: `${theme?.palette?.primary?.hover_1}20`,
-                    border: `1.5px solid ${theme?.palette?.primary?.hover_1}40`,
+                    bgcolor: theme?.palette?.primary?.hover_1,
+                    color: theme?.palette?.primary?.color_2,
                     cursor: "pointer",
                   },
                 }}
               >
-                {item?.name}
+                {item?.icon}
+                <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                  {item?.name}
+                </Typography>
               </Box>
             ))}
           </Box>
