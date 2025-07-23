@@ -14,14 +14,9 @@ import React from "react";
 export const Header = () => {
   const theme = useTheme();
   const router = useRouter();
-  console.log(router?.pathname);
   return (
     <>
-      <Box
-        sx={{
-          px: 8
-        }}
-      >
+      <Box>
         <Container
           maxWidth="xl"
           sx={{

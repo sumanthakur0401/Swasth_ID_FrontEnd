@@ -31,10 +31,9 @@ const QRCodeSection = ({ userId = "SwasthID-027", correctPin = "0000" }) => {
   return (
     <Box
       sx={{
-        width: "250px",
-        height: "250px",
         backgroundColor: "#ffffff",
-        borderRadius: 10,
+        borderRadius: "10px",
+        height: "100%",
         p: 2,
         boxShadow: "0px 2px 5px rgba(0,0,0,0.05)",
         display: "flex",
@@ -53,7 +52,6 @@ const QRCodeSection = ({ userId = "SwasthID-027", correctPin = "0000" }) => {
       >
         Your QR Code
       </Typography>
-
       <Box
         sx={{
           width: 150,

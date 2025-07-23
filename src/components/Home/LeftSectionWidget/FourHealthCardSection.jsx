@@ -1,82 +1,74 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import MedicalServicesIcon from "@mui/icons-material/MedicalServices"; // fallback
-import BiotechIcon from "@mui/icons-material/Biotech"; // 🧠 Neurologist
-import VisibilityIcon from "@mui/icons-material/Visibility"; // 👁️ Fallback for Eye Care
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz"; // ➕
-
-import ToothIcon from "@mui/icons-material/MedicalServices"; // Use your preferred tooth-like icon
-import GlassesIcon from "@mui/icons-material/Visibility"; // Substitute or custom if needed
-
 import React from "react";
+import { Box, Grid, IconButton, Typography, useTheme } from "@mui/material";
+import {
+  BiotechRounded,
+  LocalHospitalRounded,
+  MoreHorizRounded,
+  Visibility,
+} from "@mui/icons-material";
 
 const FourHealthCardSection = () => {
   const theme = useTheme();
 
   const cards = [
-    { label: "Dental", icon: <ToothIcon /> },
-    { label: "Eye Care", icon: <GlassesIcon /> },
-    { label: "Neurologist", icon: <BiotechIcon /> },
-    { label: "More", icon: <MoreHorizIcon /> },
+    {
+      label: "Dental",
+      icon: <LocalHospitalRounded sx={{ color: "#FFFFFF" }} />,
+    },
+    { label: "Eye Care", icon: <Visibility sx={{ color: "#FFFFFF" }} /> },
+    {
+      label: "Neurologist",
+      icon: <BiotechRounded sx={{ color: "#FFFFFF" }} />,
+    },
+    { label: "More", icon: <MoreHorizRounded sx={{ color: "#FFFFFF" }} /> },
   ];
 
   return (
-    <Box
+    <Grid
+      container
       sx={{
-        width: 250,
-        height: 250,
-        borderRadius: 10,
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
-        gridTemplateRows: "repeat(2, 1fr)",
-        gap: 1.5,
+        height: "100%",
       }}
     >
-      {cards.map((card, idx) => (
-        <Box
-          key={idx}
+      {cards.map((card, item) => (
+        <Grid
+          item
+          size={{ xs: 6 }}
+          key={item}
           sx={{
-            width: "100%",
-            aspectRatio: "1 / 1",
-            borderRadius: 10,
-            backgroundColor: theme.palette.primary.main,
+            p: 1,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap: 1,
-            boxShadow: "0px 2px 4px rgba(0,0,0,0.08)",
           }}
         >
           <Box
             sx={{
-              width: 50,
-              height: 50,
+              borderRadius: "100px",
+              backgroundColor: theme.palette.primary.main,
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              height: "100px",
+              width: "100px",
             }}
           >
-            {card.icon &&
-              React.cloneElement(card.icon, {
-                sx: {
-                  color: theme.palette.primary.bgcolor_1,
-                  fontSize: 26,
-                },
-              })}
+            <IconButton>{card?.icon}</IconButton>
+            <Typography
+              fontSize="14px"
+              fontWeight={600}
+              textAlign="center"
+              sx={{
+                color: theme.palette.primary.bgcolor_1,
+              }}
+            >
+              {card.label}
+            </Typography>
           </Box>
-          <Typography
-            sx={{
-              fontSize: 14,
-              fontWeight: 600,
-              color: theme.palette.primary.bgcolor_1,
-              textAlign: "center",
-            }}
-          >
-            {card.label}
-          </Typography>
-        </Box>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   );
 };
 

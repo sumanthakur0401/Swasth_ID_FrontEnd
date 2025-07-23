@@ -1,9 +1,4 @@
-import {
-  Box,
-  Typography,
-  Button,
-  useTheme,
-} from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import VerifiedIcon from "@mui/icons-material/Verified";
 
@@ -28,9 +23,8 @@ const PharmacySection = () => {
   return (
     <Box
       sx={{
-        width: 200,
-        height: 250,
-        borderRadius: 10,
+        height: "100%",
+        borderRadius: "10px",
         backgroundColor: theme.palette.primary.themeColor_3,
         boxShadow: "0px 2px 4px rgba(0,0,0,0.1)",
         p: 2,
@@ -41,15 +35,15 @@ const PharmacySection = () => {
     >
       <Box
         sx={{
-          display:"flex",
-          flexDirection:"column",
-          justifyContent:"center",
-          alignContent:"center"
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignContent: "center",
         }}
       >
         <Typography
           sx={{
-            alignSelf:"center",
+            alignSelf: "center",
             fontSize: 26,
             fontWeight: 800,
             color: theme.palette.primary.themeColor_3_dark,

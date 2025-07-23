@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-
 const getDaysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
 const getFirstDayOfMonth = (year, month) => new Date(year, month, 1).getDay();
 
@@ -63,10 +62,9 @@ const CalendarSection = () => {
   return (
     <Box
       sx={{
-        width: "250px",
-        height: "250px",
         backgroundColor: "#ffffff",
-        borderRadius: 10,
+        borderRadius: "10px",
+        height: "100%",
         p: 1.5,
         boxShadow: "0px 2px 5px rgba(0,0,0,0.05)",
       }}
@@ -76,7 +74,7 @@ const CalendarSection = () => {
           width: "100%",
           display: "flex",
           alignItems: "center",
-          px:1,
+          px: 1,
           justifyContent: "space-between",
           mb: 1,
         }}

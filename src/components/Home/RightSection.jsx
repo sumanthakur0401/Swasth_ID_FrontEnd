@@ -1,10 +1,4 @@
-import {
-  Box,
-  Typography,
-  useTheme,
-  Button,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, useTheme, Button, IconButton } from "@mui/material";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
@@ -20,7 +14,7 @@ export const RightSection = () => {
         backgroundColor: theme.palette.background.paper,
         paddingTop: "10px",
         height: "100%",
-        borderRadius: 10,
+        borderRadius: "10px",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -56,7 +50,7 @@ export const RightSection = () => {
         sx={{
           backgroundImage:
             "linear-gradient(to bottom right, #fdfcffff, #e1deefff)",
-          borderRadius: 10,
+          borderRadius: "10px",
           p: 2,
           flexGrow: 1,
           display: "flex",
