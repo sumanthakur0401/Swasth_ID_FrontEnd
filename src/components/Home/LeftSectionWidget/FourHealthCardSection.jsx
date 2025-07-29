@@ -36,7 +36,6 @@ const FourHealthCardSection = () => {
           size={{ xs: 6 }}
           key={item}
           sx={{
-            p: 1,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -44,14 +43,14 @@ const FourHealthCardSection = () => {
         >
           <Box
             sx={{
-              borderRadius: "100px",
+              borderRadius: "10px",
               backgroundColor: theme.palette.primary.main,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              height: "100px",
-              width: "100px",
+              height: "90%",
+              width: "90%",
             }}
           >
             <IconButton>{card?.icon}</IconButton>

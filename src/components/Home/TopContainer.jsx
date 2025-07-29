@@ -11,14 +11,14 @@ export const Topcontainer = () => {
           <Grid container>
             <Grid
               item
-              size={{ xs: 12, md: 9 }}
+              size={{ xs: 12, md: 9.5 }}
               sx={{
-                p: 2,
+                p: 1,
               }}
             >
               <LeftSection />
             </Grid>
-            <Grid item size={{ xs: 12, md: 3 }}>
+            <Grid item size={{ xs: 12, md: 2.5 }}>
               <RightSection />
             </Grid>
           </Grid>
