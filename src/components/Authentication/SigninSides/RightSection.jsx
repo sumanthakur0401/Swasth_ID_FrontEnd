@@ -4,8 +4,8 @@ import { useRouter } from "next/router";
 const RightSection = () => {
   const theme = useTheme();
   const router = useRouter();
-  
-   const handleLogin = () => {
+
+  const handleLogin = () => {
     router.push("/dashboard");
   };
 
@@ -24,29 +24,6 @@ const RightSection = () => {
         p: 4,
       }}
     >
-      {/* Create Account Button - top right */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 20,
-          right: 20,
-        }}
-      >
-        <Button
-          variant="outlined"
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-            fontSize: 14,
-            backgroundColor: theme.palette.primary.main,
-            color: theme.palette.primary.bgcolor_1,
-            borderRadius: 1,
-          }}
-        >
-          Create New Account
-        </Button>
-      </Box>
-
       {/* Main Content */}
       <Typography
         fontSize="2rem"
@@ -62,7 +39,8 @@ const RightSection = () => {
         maxWidth="70%"
         sx={{ color: theme.palette.primary.main }}
       >
-        Manage appointments, access your health records, and consult verified doctors.
+        Manage appointments, access your health records, and consult verified
+        doctors.
       </Typography>
 
       <Button

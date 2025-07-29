@@ -1,8 +1,14 @@
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import Image from "next/image"; // ✅ Only if you're using Next.js
+import { useRouter } from "next/router";
 
 const LeftSection = () => {
   const theme = useTheme();
+  const router = useRouter();
+
+  const handleLogin = ()=>{
+    router.push("/dashboard");
+  }
 
   return (
     <Box
@@ -19,22 +25,6 @@ const LeftSection = () => {
         p: 4,
       }}
     >
-      {/* Logo in top-left corner */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 10,
-          left: 20,
-        }}
-      >
-        <Image
-          src="/assets/SwasthId_logo_light.png"
-          alt="Swasth ID Logo"
-          width={100}
-          height={35}
-        />
-      </Box>
-
       <Typography
         fontSize="2rem"
         fontWeight={600}
@@ -58,6 +48,7 @@ const LeftSection = () => {
       </Typography>
 
       <Button
+        onClick={handleLogin}
         variant="outlined"
         sx={{
           textTransform: "none",
