@@ -200,50 +200,88 @@ const WelcomePage = () => {
       </Box>
 
       {/* Info Section */}
+      {/* Info Section */}
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
           color: "white",
           px: 4,
-          py: 10,
+          py: 12,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Typography variant="h4" fontWeight="600" gutterBottom>
-          Why Swasth ID?
+        <Typography
+          variant="h3"
+          fontWeight="700"
+          gutterBottom
+          textAlign="center"
+        >
+          Why Choose Swasth ID?
         </Typography>
-        <Typography variant="body1" mb={4}>
-          Swasth ID simplifies healthcare. Whether you're a patient managing
-          prescriptions or a doctor accessing verified histories, our platform
-          ensures security, speed, and trust.
+        <Typography
+          variant="h6"
+          mb={6}
+          sx={{
+            maxWidth: "800px",
+            textAlign: "center",
+            color: "rgba(255,255,255,0.8)",
+          }}
+        >
+          Swasth ID transforms healthcare into a secure, connected, and
+          personalized experience. Whether you're a patient or a provider, we
+          simplify your journey with trust and technology.
         </Typography>
 
-        <Grid container spacing={4}>
-          {[
-            {
-              title: "🔐 Secure Health Records",
-              desc: "Access encrypted medical documents anytime, anywhere.",
-            },
-            {
-              title: "🩺 Trusted Doctors",
-              desc: "Find professionals verified by healthcare networks.",
-            },
-            {
-              title: "📅 Appointment Tracking",
-              desc: "Visualize your entire medical calendar in one place.",
-            },
-          ].map((card, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card sx={{ backgroundColor: "#2c2c2c", color: "white" }}>
-                <CardContent>
-                  <Typography variant="h6" gutterBottom>
-                    {card.title}
-                  </Typography>
-                  <Typography variant="body2">{card.desc}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        {/* Vertically stacked cards */}
+        {[
+          {
+            title: "🔐 Secure Records",
+            desc: "Encrypted access to your health history with full privacy control. Your Swasth ID ensures that only authorized professionals can view your medical documents.",
+            color: theme.palette.primary.themeColor_1,
+          },
+          {
+            title: "🩺 Verified Doctors",
+            desc: "Consult trusted professionals with verified credentials. Our network includes specialists across fields, all vetted for quality and experience.",
+            color: theme.palette.primary.themeColor_2,
+          },
+          {
+            title: "📅 Smart Scheduling",
+            desc: "Track appointments and receive timely reminders. Our calendar syncs with your health timeline so you never miss a checkup or consultation.",
+            color: theme.palette.primary.themeColor_3,
+          },
+        ].map((card, index) => (
+          <Card
+            key={index}
+            sx={{
+              backgroundColor: card.color,
+              color: theme.palette.primary.bgcolor_1,
+              borderRadius: 3,
+              boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+              width: "100%",
+              maxWidth: "600px",
+              height: "200px",
+              mb: 4,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              px: 4,
+              py: 3,
+              textAlign: "center",
+            }}
+          >
+            <CardContent>
+              <Typography variant="h6" fontWeight="600" gutterBottom>
+                {card.title}
+              </Typography>
+              <Typography variant="body2" sx={{ opacity: 0.9 }}>
+                {card.desc}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </Box>
 
       {/* Footer */}
